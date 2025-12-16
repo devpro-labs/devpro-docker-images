@@ -1,0 +1,9 @@
+{
+  "name": "runner-js-express",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.19.0"
+  },
+  "type": "module",
+  "main": "server.js"
+}
