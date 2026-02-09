@@ -1,6 +1,6 @@
 FROM express-js-base
 
 COPY package*.json ./
-RUN npm install axios jsonwebtoken
+RUN npm install node-redis
 
 CMD ["node", "index.js"]

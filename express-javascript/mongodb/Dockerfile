@@ -1,6 +1,6 @@
 FROM express-js-base
 
 COPY package*.json ./
-RUN npm install axios jsonwebtoken
+RUN npm install mongoose
 
 CMD ["node", "index.js"]
