@@ -2,3 +2,17 @@ fastapi
 uvicorn[standard]
 pydantic
 python-dotenv
+
+# PostgreSQL
+psycopg2-binary
+SQLAlchemy
+asyncpg
+
+# Redis
+redis
+
+# MongoDB
+motor
+
+# JWT
+python-jose[cryptography]

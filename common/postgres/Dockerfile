@@ -2,8 +2,8 @@ FROM postgres:16-alpine
 
 EXPOSE 5432
 
-ENV POSTGRES_DB=appdb
-ENV POSTGRES_USER=appuser
-ENV POSTGRES_PASSWORD=apppassword
+ENV POSTGRES_DB=db
+ENV POSTGRES_USER=user
+ENV POSTGRES_PASSWORD=password
 
 CMD ["postgres"]

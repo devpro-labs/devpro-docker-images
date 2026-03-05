@@ -1,20 +1,17 @@
-FROM node:20-alpine
-
-WORKDIR /tmp
-COPY package*.json ./
-RUN npm install --silent
-
-RUN mv node_modules /node_modules
-
-RUN npm install -g typescript ts-node @types/express @types/node --silent
+FROM node:18-alpine
 
 WORKDIR /app
 
-# Auto-link so Node resolves modules without needing exec commands
-RUN ln -s /node_modules /app/node_modules
+COPY package.json package-lock.json* ./
 
-ENV NODE_PATH=/node_modules
-ENV TS_NODE_TRANSPILE_ONLY=true
+RUN npm install
+
+COPY . .
+
+RUN npx tsc
+
+ENV NODE_ENV=production
 
 EXPOSE 3000
-CMD ["tail", "-f", "/dev/null"]
+
+CMD ["node", "dist/index.js"]
