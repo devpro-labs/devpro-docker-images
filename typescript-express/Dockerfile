@@ -4,10 +4,13 @@ WORKDIR /app
 
 COPY package.json package-lock.json* ./
 
-RUN npm install
+# Install deps + types
+RUN npm install && \
+    npm install --save-dev @types/pg @types/cookie-parser @types/cors @types/jsonwebtoken
 
 COPY . .
 
+# Build TypeScript
 RUN npx tsc
 
 ENV NODE_ENV=production
